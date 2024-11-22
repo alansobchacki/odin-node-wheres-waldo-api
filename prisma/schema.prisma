@@ -21,6 +21,7 @@ model Player {
 
 model Target {
   id       Int      @id @default(autoincrement())
+  name     String   @unique
   image    String
   xCoords  Int
   yCoords  Int
