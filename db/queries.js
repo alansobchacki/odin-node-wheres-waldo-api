@@ -1,4 +1,5 @@
-const prisma = require('../prisma');
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 // Create a new target for players to find, must be initialized on a database
 async function createTarget(image, name, x, y) {
