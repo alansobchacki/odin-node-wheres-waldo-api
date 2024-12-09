@@ -31,7 +31,6 @@ async function isGuessCorrect(name, x, y) {
   return target !== null;
 }
 
-
 // Create a new player (will only be called after someone wins a game)
 async function createPlayer(name) {
   return await prisma.player.create({
