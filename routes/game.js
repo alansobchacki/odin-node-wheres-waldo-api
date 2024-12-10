@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require("../db/queries");
 
-// fetch three random targets before a game starts
+// GET three random targets before a game starts
 router.get('/', async (req, res) => {
   try {
     const limit = 3;
@@ -17,6 +17,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+// GET all high scores
 router.get('/scores', async (req, res) => {
   try {
     console.log('Fetching high scores...');
@@ -29,9 +31,10 @@ router.get('/scores', async (req, res) => {
   }
 })
 
-router.get('/guess', async (req, res) => {
+// POST a player's current guess
+router.post('/guess', async (req, res) => {
   try {
-    const { name, x, y } = req.query;
+    const { name, x, y } = req.body;
     console.log('Analyzing guess...');
 
     if (!name || !x || !y) {
@@ -44,6 +47,25 @@ router.get('/guess', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to parse guess' });
+  }
+});
+
+// POST a player score
+router.post('/save', async (req, res) => {
+  try {
+    const { name, score } = req.body;
+    console.log('Saving player score...');
+
+    if (!name || name.length < 1 || name.length > 6) {
+      return res.status(400).json({ error: `Name must be between 1 and 6 characters long - ${name}` });
+    }
+
+    const newPlayer = await db.createPlayer(name, score);
+
+    res.status(201).json(newPlayer);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Failed to save player scores' });
   }
 });
 

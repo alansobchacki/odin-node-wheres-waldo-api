@@ -25,8 +25,8 @@ async function isGuessCorrect(name, x, y) {
   const target = await prisma.target.findFirst({
     where: {
       name: name,
-      xCoords: x,    
-      yCoords: y   
+      xCoords: { gte: Math.floor(x) - 1, lte: Math.ceil(x) + 1 },
+      yCoords: { gte: Math.floor(y) - 1, lte: Math.ceil(y) + 1 },
     }
   });
 
@@ -34,11 +34,11 @@ async function isGuessCorrect(name, x, y) {
 }
 
 // Create a new player (will only be called after someone wins a game)
-async function createPlayer(name) {
+async function createPlayer(name, score) {
   return await prisma.player.create({
     data: {
-      name,
-      score
+      name: name,
+      score: score
     },
   });
 }

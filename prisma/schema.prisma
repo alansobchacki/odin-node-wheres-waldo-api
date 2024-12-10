@@ -15,7 +15,7 @@ datasource db {
 
 model Player {
   id       Int      @id @default(autoincrement())
-  name     String   @unique
+  name     String   @unique @db.VarChar(6)
   score    Int
 }
 
@@ -23,6 +23,6 @@ model Target {
   id       Int      @id @default(autoincrement())
   name     String   @unique
   image    String
-  xCoords  Float
-  yCoords  Float
+  xCoords  Int
+  yCoords  Int
 }
