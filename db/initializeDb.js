@@ -8,32 +8,32 @@ const targets = [
   {
     name: 'Consuela',
     image: `${IMAGE_BASE_URL}/assets/consuela.jpg`,
-    xCoords: 36.22,
-    yCoords: 26.97,
+    xCoords: 36,
+    yCoords: 27,
   },
   {
     name: 'Roger',
     image: `${IMAGE_BASE_URL}/assets/roger.jpg`,
-    xCoords: 62.84,
-    yCoords: 36.91,
+    xCoords: 63,
+    yCoords: 37,
   },
   {
     name: 'Kratos',
     image: `${IMAGE_BASE_URL}/assets/kratos.jpg`,
-    xCoords: 59.04,
-    yCoords: 68.25,
+    xCoords: 59,
+    yCoords: 68,
   },
   {
     name: 'Wilbur',
     image: `${IMAGE_BASE_URL}/assets/wilbur.jpg`,
-    xCoords: 83.72,
-    yCoords: 95.72,
+    xCoords: 84,
+    yCoords: 96,
   },
   {
     name: 'Samus Aran',
     image: `${IMAGE_BASE_URL}/assets/samus.jpg`,
-    xCoords: 63.51,
-    yCoords: 86.74,
+    xCoords: 64,
+    yCoords: 87,
   },
 ];
 

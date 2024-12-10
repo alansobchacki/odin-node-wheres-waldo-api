@@ -1,7 +1,8 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-// Create a new target for players to find, must be initialized on a database
+// Create a new target for players to find
+// Will only be executed on an initialize-database script
 async function createTarget(image, name, x, y) {
   return await prisma.target.create({
     data: {
@@ -23,7 +24,7 @@ async function getRandomTargets(limit) {
 async function isGuessCorrect(name, x, y) {
   const target = await prisma.target.findFirst({
     where: {
-      image: name,
+      name: name,
       xCoords: x,    
       yCoords: y   
     }
