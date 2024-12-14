@@ -55,7 +55,7 @@ const targets = [
   },
   {
     name: 'Phineas',
-    image: `${IMAGE_BASE_URL}/assets/brian.jpg`,
+    image: `${IMAGE_BASE_URL}/assets/phineas.jpg`,
     xCoords: 97,
     yCoords: 48,
   },
