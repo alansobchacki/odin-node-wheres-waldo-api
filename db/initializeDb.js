@@ -1,4 +1,4 @@
-const { createTarget } = require('./queries');
+const { createTarget, createPlayer } = require('./queries');
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
