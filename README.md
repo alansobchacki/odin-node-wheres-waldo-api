@@ -39,6 +39,15 @@ These were the project requirements:
 
 ---
 
+### Tech Stack
+- **React**: Front-end framework (see [Front-end Repo](https://github.com/alansobchacki/odin-react-wheres-waldo/))
+- **Node.js** & **Express**: Backend API  
+- **PostgreSQL**: Database
+- **Prisma**: ORM
+- **Vercel / Render / Neon**: Hosting and Deployment
+
+---
+
 ### What I Learned
 
 I already knew most of the concepts applied in this project, such as building a database with PostgreSQL, building queries, using an ORM, and fetching data with React.
